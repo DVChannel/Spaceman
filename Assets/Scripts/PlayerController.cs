@@ -46,10 +46,8 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
                                             Vector2.down,
                                             1.5f,
                                             groundMask)){
-                                                animator.enabled=true;
                                                 return true;
                                             }else{
-                                                animator.enabled=false;
                                                 return false;
                                             }
     }
