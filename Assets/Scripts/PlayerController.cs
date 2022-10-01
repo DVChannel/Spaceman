@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
 //variables movimiento 
 public float jumpForce = 6f;
+public float runningSpeed = 2f;
 private Rigidbody2D rigidBody;
 Animator animator;
 const string STATE_ALIVE="isAlive";
@@ -34,6 +35,13 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
         }        
         animator.SetBool(STATE_ON_THE_GROUD, IsTouchingTheGround());
         Debug.DrawRay(this.transform.position, Vector2.down*1.5f, Color.red);
+    }
+
+    void FixedUpdate(){
+        if (rigidBody.velocity.x < runningSpeed){
+            rigidBody.velocity = new Vector2(runningSpeed,
+                                            rigidBody.velocity.y);
+        }
     }
 
     void Jump(){
