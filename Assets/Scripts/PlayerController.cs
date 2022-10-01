@@ -43,14 +43,15 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
             rigidBody.velocity = new Vector2(runningSpeed,
                                             rigidBody.velocity.y);
         }}else{
-            rigidBody.velocity = Vector2(0, rigidBody.velocity.y);
+            rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
     }
 
     void Jump(){
+        if(GameManager.sharedInstance.currentGameState == GameState.inGame){
         if (IsTouchingTheGround()){
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);}
-    }
+    }}
 
     bool IsTouchingTheGround(){
         if(Physics2D.Raycast(this.transform.position,
