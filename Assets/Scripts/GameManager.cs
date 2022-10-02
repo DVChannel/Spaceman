@@ -19,13 +19,13 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-     controller = GameObject.Find("Player").GetComponent<PlayerController>;   
+     controller = GameObject.Find("Player").GetComponent<PlayerController>();   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Submit")){
+        if(Input.GetButtonDown("Submit") && currentGameState != GameState.inGame){
             StartGame();
         }        
     }

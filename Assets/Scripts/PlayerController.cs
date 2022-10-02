@@ -26,13 +26,14 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetBool(STATE_ALIVE, true);
-        animator.SetBool(STATE_ON_THE_GROUD, true);
         startPosition = this.transform.position;
     
     }
 
    public void StartGame(){
+      animator.SetBool(STATE_ALIVE, true);
+        animator.SetBool(STATE_ON_THE_GROUD, true);
+      
         this.transform.position = startPosition;
         this.rigidBody.velocity = Vector2.zero;
     }
