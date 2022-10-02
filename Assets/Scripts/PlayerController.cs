@@ -63,4 +63,10 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
                                                 return false;
                                             }
     }
+
+public void Die(){
+    this.animator.SetBool(STATE_ALIVE, false);
+    GameManager.sharedInstance.GameOver();
+}
+
 }
