@@ -10,6 +10,8 @@ public float jumpForce = 6f;
 public float runningSpeed = 2f;
 private Rigidbody2D rigidBody;
 Animator animator;
+Vector3 startPosition;
+
 const string STATE_ALIVE="isAlive";
 const string STATE_ON_THE_GROUD="isOnTheGround";
 
@@ -18,6 +20,7 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
     void Awake(){
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
     }
     
     // Start is called before the first frame update
@@ -25,6 +28,13 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
     {
         animator.SetBool(STATE_ALIVE, true);
         animator.SetBool(STATE_ON_THE_GROUD, true);
+        startPosition = this.transform.position;
+    
+    }
+
+   public void StartGame(){
+        this.transform.position = startPosition;
+        this.rigidBody.velocity = Vector2.zero;
     }
 
     // Update is called once per frame

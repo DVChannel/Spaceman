@@ -9,6 +9,8 @@ public enum GameState{
 public class GameManager : MonoBehaviour
 {   public GameState currentGameState = GameState.menu;
     public static GameManager sharedInstance; 
+
+    private PlayerController controller;
     // Start is called before the first frame update
     
     void Awake(){
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        
+     controller = GameObject.Find("Player").GetComponent<PlayerController>;   
     }
 
     // Update is called once per frame
@@ -40,9 +42,9 @@ public void BackToMenu(){
 }
 
 void SetGameState(GameState newGameState){
-if(newGameState==GameState.menu){}
-else if (newGameState==GameState.inGame){}
-else if (newGameState==GameState.gameOver){}    
+if(newGameState == GameState.menu){}
+else if (newGameState == GameState.inGame){ controller.StartGame();}
+else if (newGameState == GameState.gameOver){}    
 }
 
 }
