@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346223161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: -0.1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,7 +251,7 @@ GameObject:
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718573715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.08786, y: -1.6018863, z: -10.1975355}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,15 +300,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1937759234741618368, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08714193
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937759234741618368, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18412824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937759234741618368, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.992822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937759234741618368, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -339,6 +339,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937759234741618374, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1937759234741618374, guid: b4d5e769b9b264d4b9d2fe9dc45993a4, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
@@ -351,9 +355,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 958263534, guid: fb9fbf58ecd7e4342921a8a8da4aee6c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8585072202993069464, guid: fb9fbf58ecd7e4342921a8a8da4aee6c, type: 3}
       propertyPath: m_Name
-      value: player
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585072202993069464, guid: fb9fbf58ecd7e4342921a8a8da4aee6c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8585072202993069471, guid: fb9fbf58ecd7e4342921a8a8da4aee6c, type: 3}
       propertyPath: m_RootOrder

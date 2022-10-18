@@ -36,6 +36,12 @@ const string STATE_ON_THE_GROUD="isOnTheGround";
       
         this.transform.position = startPosition;
         this.rigidBody.velocity = Vector2.zero;
+        Invoke("RestartPosition", 0.1f);
+    }
+
+    void RestartPosition(){
+        this.transform.position = startPosition;
+        this.rigidBody.velocity = Vector2.zero;
     }
 
     // Update is called once per frame

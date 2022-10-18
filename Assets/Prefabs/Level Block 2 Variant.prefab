@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162088047496354514, guid: cc11c4724a75e7e4c93c3cccb8aa6004, type: 3}
       propertyPath: m_Name
-      value: Level Block 2
+      value: Level Block 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4162088047496354515, guid: cc11c4724a75e7e4c93c3cccb8aa6004, type: 3}
       propertyPath: m_RootOrder
@@ -132,11 +132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162088047496354515, guid: cc11c4724a75e7e4c93c3cccb8aa6004, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.016264439
       objectReference: {fileID: 0}
     - target: {fileID: 4162088047496354515, guid: cc11c4724a75e7e4c93c3cccb8aa6004, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05666376
       objectReference: {fileID: 0}
     - target: {fileID: 4162088047496354515, guid: cc11c4724a75e7e4c93c3cccb8aa6004, type: 3}
       propertyPath: m_LocalPosition.z
