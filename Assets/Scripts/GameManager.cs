@@ -43,7 +43,8 @@ public void BackToMenu(){
 
 void SetGameState(GameState newGameState){
 if(newGameState == GameState.menu){}
-else if (newGameState == GameState.inGame){ controller.StartGame();}
+else if (newGameState == GameState.inGame){ LevelManager.sharedInstance.RemoveAllLevelBlocks();
+}
 else if (newGameState == GameState.gameOver){}    
 
 this.currentGameState = newGameState;

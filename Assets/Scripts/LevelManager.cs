@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        
+        GenerateInitialBlocks();
     }
 
     // Update is called once per frame
