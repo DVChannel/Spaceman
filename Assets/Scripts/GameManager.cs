@@ -7,8 +7,9 @@ public enum GameState{
 }
 
 public class GameManager : MonoBehaviour
-{   public GameState currentGameState = GameState.menu;
+{   
     public static GameManager sharedInstance; 
+    public GameState currentGameState = GameState.menu;
 
     private PlayerController controller;
     // Start is called before the first frame update
@@ -42,10 +43,18 @@ public void BackToMenu(){
 }
 
 void SetGameState(GameState newGameState){
-if(newGameState == GameState.menu){}
-else if (newGameState == GameState.inGame){ LevelManager.sharedInstance.RemoveAllLevelBlocks();
+if(newGameState == GameState.menu){
+    MenuManager.sharedInstance.ShowMainMenu();
 }
-else if (newGameState == GameState.gameOver){}    
+else if (newGameState == GameState.inGame){ 
+    LevelManager.sharedInstance.RemoveAllLevelBlocks();
+    LevelManager.sharedInstance.GenerateInitialBlocks();
+    controller.StartGame();
+    MenuManager.sharedInstance.ShowMainMenu();
+}
+else if (newGameState == GameState.gameOver){
+    MenuManager.sharedInstance.ShowMainMenu();
+}    
 
 this.currentGameState = newGameState;
 }
