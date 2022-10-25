@@ -8,10 +8,11 @@ public enum GameState{
 
 public class GameManager : MonoBehaviour
 {   
-    public static GameManager sharedInstance; 
     public GameState currentGameState = GameState.menu;
-
+    public static GameManager sharedInstance; 
+    
     private PlayerController controller;
+    public int collectedObject = 0;
     // Start is called before the first frame update
     
     void Awake(){
@@ -45,6 +46,8 @@ public void BackToMenu(){
 void SetGameState(GameState newGameState){
 if(newGameState == GameState.menu){
     MenuManager.sharedInstance.ShowMainMenu();
+    MenuManager.sharedInstance.HideGameMenu();
+    MenuManager.sharedInstance.HideGameOverMenu();
 }
 else if (newGameState == GameState.inGame){ 
     LevelManager.sharedInstance.RemoveAllLevelBlocks();
@@ -53,10 +56,16 @@ else if (newGameState == GameState.inGame){
     MenuManager.sharedInstance.ShowMainMenu();
 }
 else if (newGameState == GameState.gameOver){
-    MenuManager.sharedInstance.ShowMainMenu();
+    MenuManager.sharedInstance.ShowMainMenu();    
+    MenuManager.sharedInstance.HideGameMenu();
+    MenuManager.sharedInstance.HideGameOverMenu();
 }    
 
 this.currentGameState = newGameState;
 }
 
+
+public void CollectedObject(Collectable collectable){
+    collectedObject += collectable.value;
+}
 }
