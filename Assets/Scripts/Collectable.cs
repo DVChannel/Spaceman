@@ -17,10 +17,16 @@ public class Collectable : MonoBehaviour
     bool hasBeenCollected = false;
     public int value = 1;
 
+    GameObject player;
+
     void Awake (){
         sprite = GetComponent<SpriteRenderer>();
         itemCollider = GetComponent<CircleCollider2D>();
     } 
+    void Start()
+    {
+     player  = GameObject.find("Player");   
+    }
     void Show(){
         sprite.enabled = true;
         itemCollider.enabled = true;
@@ -42,11 +48,12 @@ public class Collectable : MonoBehaviour
         break;
     
         case CollectableType.healthPotion:
-
+        
+        player.GetComponent<PlayerController>().CollectHealth(this.value);
         break;
         
         case CollectableType.manaPotion:
-
+        player.GetComponent<PlayerController>().CollectMana(this.value);
         break;
     }
     }
@@ -57,11 +64,6 @@ public class Collectable : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
