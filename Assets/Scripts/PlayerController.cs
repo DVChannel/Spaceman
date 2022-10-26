@@ -15,6 +15,8 @@ Vector3 startPosition;
 const string STATE_ALIVE="isAlive";
 const string STATE_ON_THE_GROUD="isOnTheGround";
 
+
+[SerializeField]
 private int healthPoints, manaPoints;
 public const  int INITIAL_HEALTH = 100, INITIAL_MANA = 15, MAX_HEALTH = 200,
 MAX_MANA = 30, MIN_HEALTH = 10, MIN_MANA = 0; 
@@ -118,10 +120,16 @@ public void CollectHealth(int points){
     if(this.healthPoints >= MAX_HEALTH){
         this.healthPoints = MAX_HEALTH;
     }
+    if(this.healthPoints <= 0){
+        Die();
+    }
 }
 
 public void CollectMana(int points){
-
+this.manaPoints += points;
+if(this.manaPoints += MAX_MANA){
+    this.manaPoints = MAX_MANA;
+}
 }
 
 public int GetHealth(){

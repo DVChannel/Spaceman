@@ -54,6 +54,9 @@ else if (newGameState == GameState.inGame){
     LevelManager.sharedInstance.GenerateInitialBlocks();
     controller.StartGame();
     MenuManager.sharedInstance.ShowMainMenu();
+    MenuManager.sharedInstance.HideGameMenu();
+    MenuManager.sharedInstance.HideGameOverMenu();
+
 }
 else if (newGameState == GameState.gameOver){
     MenuManager.sharedInstance.ShowMainMenu();    
