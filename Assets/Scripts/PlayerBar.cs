@@ -18,10 +18,10 @@ public class PlayerBar : MonoBehaviour
         slider = GetComponent <Slider>();
         switch (type)
         {            
-         case BarType.healthBar;
+         case BarType.healthBar:
             slider.maxValue = PlayerController.MAX_HEALTH;
             break;
-        case BarType.manaBar;
+        case BarType.manaBar:
 
             break;
         }
