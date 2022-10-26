@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+    public float runningSpeed = 1.5f;
+    public int enemyDamage = 10f;
     Rigidbody2D rigidBody;
 
     public bool facingRight = false;
@@ -34,5 +36,17 @@ public class Enemy : MonoBehaviour
         if(GameManager.sharedInstance.currentGameState == GameState.inGame){
             rigidBody.velocity = new Vector2(currentRunningSpeed, rigidBody.velocity.y);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.tag == "Coin"){
+            return;
+        }
+        if(collision.tag == "Player"){
+            collision.gameObject.GetComponent<PlayerController>().
+            CollectHealth(-enemyDamage);
+            return;
+        }
+        facingRight = !facingRight;
     }
 }
